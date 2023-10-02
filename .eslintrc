@@ -1,18 +1,14 @@
 {
-  "env": {
-      "node": true
-  },
-  "extends": [
-      "prettier",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended"
-  ],
-  "rules": {
-      "@typescript-eslint/no-unused-vars": "error",
-      "no-multiple-empty-lines": "error",
-      "no-console": ["error", {"allow": ["warn", "error", "info"]}],
-      "eqeqeq": "error",
-      "dot-notation": "error",
-      "no-unused-vars": "error"
-  }
+    "env": {
+        "node": true
+    },
+    "extends": ["prettier", "plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-multiple-empty-lines": "error",
+        "no-console": ["error", {"allow": ["warn", "error", "info"]}],
+        "eqeqeq": "error",
+        "dot-notation": "error",
+        "no-unused-vars": "error"
+    }
 }
