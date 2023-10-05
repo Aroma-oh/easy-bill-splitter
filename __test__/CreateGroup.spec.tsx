@@ -7,7 +7,7 @@ const renderComponent = () => {
 
     const input = screen.getByPlaceholderText('제주도 여행 경비');
     const saveButton = screen.getByText('저장');
-    const errorMessage = screen.getByAltText('무엇을 정산할지 입력해 주세요.');
+    const errorMessage = screen.queryByText('무엇을 정산할지 입력해 주세요.');
 
     return {
         input,

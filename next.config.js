@@ -1,4 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
+module.exports = {
+  swc: {
+    jsc: {
+      target: "es2020",
+      parser: {
+        syntax: "typescript",
+        dynamicImport: true,
+        jsx: true,
+      },
+    },
+  },
+  experimental: { optimizeFonts: false },
+};
