@@ -1,13 +1,13 @@
 import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import CreateGroup from '../src/components/CreateGroup';
+import CreateTitle from '@/components/CreateTitle';
 
 const renderComponent = () => {
-    render(<CreateGroup />);
+    render(<CreateTitle />);
 
-    const input = screen.getByPlaceholderText('제주도 여행 경비');
+    const input = screen.getByPlaceholderText('제주도 여행 경비 정산');
     const saveButton = screen.getByText('저장');
-    const errorMessage = screen.queryByText('무엇을 정산할지 입력해 주세요.');
+    const errorMessage = screen.queryByText('정산 목적을 입력해 주세요.');
 
     return {
         input,
@@ -28,7 +28,7 @@ describe('정산 타이틀 생성 페이지', () => {
         const {saveButton, errorMessage} = renderComponent();
 
         await userEvent.click(saveButton);
-        expect(errorMessage).not.toBeNull();
+        expect(errorMessage).toHaveAttribute('data-invalid', 'true');
     });
 
     test('타이틀 입력 후 "저장" 버튼을 클릭시 저장 성공을 검사한다.', async () => {
@@ -37,6 +37,6 @@ describe('정산 타이틀 생성 페이지', () => {
         await userEvent.type(input, '타이틀 입력 검사');
         await userEvent.click(saveButton);
 
-        expect(errorMessage).toBeNull();
+        expect(errorMessage).toHaveAttribute('data-invalid', 'false');
     });
 });
