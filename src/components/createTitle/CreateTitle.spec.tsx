@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import CreateTitle from '@/components/CreateTitle';
+import CreateTitle from './CreateTitle';
 
 const renderComponent = () => {
     render(<CreateTitle />);

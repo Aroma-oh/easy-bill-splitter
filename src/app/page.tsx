@@ -1,6 +1,5 @@
 import styles from './page.module.css';
-import CreateGroup from '@/components/CreateTitle';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CreateGroup from '@/components/createTitle/CreateTitle';
 
 export default function Home() {
     return (
