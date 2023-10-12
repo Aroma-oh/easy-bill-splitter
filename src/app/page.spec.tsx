@@ -1,9 +1,16 @@
 import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import CreateTitle from './CreateTitle';
+import CreateTitle from '@/app/page';
+import {AppRouterContextProviderMock} from '@/utils/mock';
 
 const renderComponent = () => {
-    render(<CreateTitle />);
+    const push = jest.fn();
+
+    render(
+        <AppRouterContextProviderMock router={{push}}>
+            <CreateTitle />
+        </AppRouterContextProviderMock>
+    );
 
     const input = screen.getByPlaceholderText('제주도 여행 경비 정산');
     const saveButton = screen.getByText('저장');

@@ -1,6 +1,6 @@
-import AddExpenseForm from '@/components/AddExpenseForm';
 import ExpenseList from '@/components/ExpenseList';
 import ExpenseSummary from '@/components/ExpenseSummary';
+import AddExpenseForm from '@/components/AddExpenseForm';
 
 const Expense = () => {
     return (

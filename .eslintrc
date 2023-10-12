@@ -9,6 +9,12 @@
         "no-console": ["error", {"allow": ["warn", "error", "info"]}],
         "eqeqeq": "error",
         "dot-notation": "error",
-        "no-unused-vars": "error"
+        "no-unused-vars": "error",
+        "react/react-in-jsx-scope": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "^18.2.0"
+        }
     }
 }

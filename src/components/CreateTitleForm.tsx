@@ -1,14 +1,18 @@
 'use client';
 
 import {ChangeEvent, FormEvent, useState} from 'react';
+import {useRouter} from 'next/navigation';
 
 const CreateTitleForm = () => {
     const [invalidTitle, setInvalidTitle] = useState(true);
     const [title, setTitle] = useState('');
+    const router = useRouter();
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if (!invalidTitle) router.push('/[expense]');
         // TODO: API 통신
+        console.info(title);
     };
 
     const inputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +27,7 @@ const CreateTitleForm = () => {
     };
 
     return (
-        <form className='max-w-md mx-auto ' onSubmit={handleSubmit}>
+        <form className='max-w-md mx-auto' onSubmit={handleSubmit}>
             <div className='mb-2'>
                 <input
                     type='text'
@@ -39,10 +43,7 @@ const CreateTitleForm = () => {
             >
                 정산 목적을 입력해 주세요.
             </p>
-            <button
-                type='submit'
-                className='bg-blue-500 text-white w-full py-2 px-4 mt-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-200'
-            >
+            <button className='text-white w-full py-2 px-4 mt-3 rounded-md bg-blue-700 hover:bg-blue-500 focus:outline-none'>
                 저장
             </button>
         </form>
